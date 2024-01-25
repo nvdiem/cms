@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+    ServerAdmin blue.local
+  ServerAlias operation.blue.local
+    DocumentRoot "C:/xampp/htdocs/blue/public"
+    ServerName blue.local
+    ErrorLog 'C:\xampp/htdocs/blue/storage/logs/blue.local-error.log'
+    CustomLog C:\xampp/htdocs/blue/storage/logs/blue.local-access.log' common
+</VirtualHost>
+
+C:\xampp\apache\conf\extra

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,6 +24,11 @@ Route::get('/', function () {
 /*  Backend  Routes */
 
 Route::get('dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index'); 
+
+/*  USER */
+Route::get('use/index', [UserController::class, 'index'])->name('user.index'); 
+
+
 
 Route::get('admin', [AuthController::class, 'index'])->name('auth.admin'); 
 Route::post('login', [AuthController::class, 'login'])->name('auth.login'); 

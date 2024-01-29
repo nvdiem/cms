@@ -3,7 +3,7 @@
         <h2>{{ config('apps.user.title') }}</h2>
         <ol class="breadcrumb">
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.html">Home 111</a>
             </li>
            
             <li class="active">
@@ -56,7 +56,8 @@
                     <td><input type="checkbox" value="" class="input-checkbox checkBoxItem"></td>
                     <td><span class="line" style="display: none;">5,3,2,-1,-3,-2,2,3,5,2</span><svg class="peity" height="16" width="32"><polygon fill="#1ab394" points="0 9.375 0 0.5 3.5555555555555554 4.25 7.111111111111111 6.125 10.666666666666666 11.75 14.222222222222221 15.5 17.77777777777778 13.625 21.333333333333332 6.125 24.888888888888886 4.25 28.444444444444443 0.5 32 6.125 32 9.375"></polygon><polyline fill="transparent" points="0 0.5 3.5555555555555554 4.25 7.111111111111111 6.125 10.666666666666666 11.75 14.222222222222221 15.5 17.77777777777778 13.625 21.333333333333332 6.125 24.888888888888886 4.25 28.444444444444443 0.5 32 6.125" stroke="#169c81" stroke-width="1" stroke-linecap="square"></polyline></svg></td>
                     <td>Samantha</td>
-                    <td><input type="checkbox" class="js-switch" checked /></td>
+                    <td><input type="checkbox" class="js-switch" checked /> </td>
+                    
                 </tr>
                 <tr>
                     <td><input type="checkbox" value="" class="input-checkbox checkBoxItem"></td>
@@ -85,6 +86,8 @@
         //         $('.checkBoxItem').prop('checked',false);
         //     }
         // });
-        
+        var elem = document.querySelector('.js-switch');
+        var switchery = new Switchery(elem, { color: '#1AB394' });
+        console.log(111);
     });
 </script>

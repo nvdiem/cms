@@ -16,12 +16,14 @@ class UserController extends Controller
     {
         $config = $this->config();
         $view  = 'backend.user.index';
-        return view('backend.layout', 
-             compact('view', 'config')
+        return view(
+            'backend.layout',
+            compact('view', 'config')
         );
     }
 
-    private function config(){
+    private function config()
+    {
         return  [
             'js'    => ['backend/js/plugins/switchery/switchery.js'],
             'css'   => ['backend/css/plugins/switchery/switchery.css'],

@@ -12,3 +12,6 @@
         <script src="{{ $item }}"></script>	    
     @endforeach
 @endif
+
+
+<script src="backend/lib/common.js"></script>

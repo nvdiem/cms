@@ -26,7 +26,16 @@ Route::get('/', function () {
 Route::get('dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index'); 
 
 /*  USER */
-Route::get('use/index', [UserController::class, 'index'])->name('user.index'); 
+Route::group(['prefix' => 'user'], function () {
+    Route::get('index', [UserController::class, 'index'])->name('user.index'); 
+    Route::get('create', [UserController::class, 'create'])->name('user.create'); 
+    Route::get('edit', [UserController::class, 'edit'])->name('user.edit'); 
+    Route::get('show', [UserController::class, 'show'])->name('user.show'); 
+    Route::get('delete', [UserController::class, 'delete'])->name('user.delete'); 
+});
+
+
+
 
 
 

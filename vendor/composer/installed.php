@@ -112,6 +112,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'getsolaris/laravel-make-service' => array(
+            'pretty_version' => 'v1.1.1',
+            'version' => '1.1.1.0',
+            'reference' => '80e6d6e050e2e526903d05613adf34a30ae27e99',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../getsolaris/laravel-make-service',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'graham-campbell/result-type' => array(
             'pretty_version' => 'v1.1.2',
             'version' => '1.1.2.0',

@@ -416,9 +416,9 @@
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
-            'pretty_version' => 'v1.27.1',
-            'version' => '1.27.1.0',
-            'reference' => '9dc648978e4276f2bfd37a076a52e3bd9394777f',
+            'pretty_version' => 'v1.27.3',
+            'version' => '1.27.3.0',
+            'reference' => '7e01b345072c9604ead9d7aed175bf7ac1d80289',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/sail',
             'aliases' => array(),

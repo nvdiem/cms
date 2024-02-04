@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AuthRequest extends FormRequest
+class StoreUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,9 @@ class AuthRequest extends FormRequest
     {
         return [
             'email' => 'required|email',
+            'name' => 'required|string',
             'password' => 'required',
+            're_password' => 'required|same:password',
         ];
     }
 
@@ -33,7 +35,7 @@ class AuthRequest extends FormRequest
             'email.required' => 'Bạn chưa nhập email',
             'email.email' => 'Email không đúng định dạng',
             'password.required' => 'Bạn chưa nhập mật khẩu',
-            're_password.required' => 'Mật khẩu không trùng khớp',
+            're_password.required' => 'Bạn chưa nhập mật khẩu',
         ];
     }
 }

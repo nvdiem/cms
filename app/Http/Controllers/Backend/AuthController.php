@@ -32,4 +32,10 @@ class AuthController extends Controller
         }
         return redirect()->route('auth.admin')->with('error', 'Email hoặc mật khẩu không đúng');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('auth.admin')->with('success', 'Đăng xuất thành công');
+    }
 }

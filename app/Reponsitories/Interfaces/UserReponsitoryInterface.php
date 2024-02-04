@@ -9,5 +9,16 @@ namespace App\Reponsitories\Interfaces;
 interface UserReponsitoryInterface
 {
 
-    public function getPaginate();
+    public function getPaginate(
+        $columns = ['*'],
+        $condition = [],
+        $perPage = 10);
+
+    public function create(array $payload = []);
+    
+    public function findById($id);
+
+    public function update(array $payload = [], $id);
+
+    public function delete($id);
 }

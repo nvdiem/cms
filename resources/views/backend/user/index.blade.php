@@ -1,39 +1,7 @@
 
 @include('backend.widgets.breadcrumb', ['title' => $config['seo']['index']['title']])
 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
-<div class="ibox-content m-b-sm border-bottom">
-    <div class="row">
-        <div class="col-sm-3">
-            <div class="form-group">
-                <input type="text" id="product_name" name="product_name" value="" placeholder="Product Name" class="form-control">
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="form-group">
-                <input type="text" id="price" name="price" value="" placeholder="Price" class="form-control">
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="form-group">
-                <input type="text" id="quantity" name="quantity" value="" placeholder="Quantity" class="form-control">
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="form-group">
-                <select name="status" id="status" class="form-control">
-                    <option value="1" selected>Enabled</option>
-                    <option value="0">Disabled</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="btn-group">
-                <a href="{{ route('user.create') }}" class="btn btn-w-m btn-info form-control">Add new</a>
-            </div>
-        </div>
-    </div>
-
-</div>
+@include('backend.user.components.fillter')
 <div class="row">
 <div class="col-lg-12">
     <div class="ibox float-e-margins">
@@ -66,17 +34,21 @@
                     <th>Họ tên</th>
                     <th>Email</th>
                     <th>Trạng Thái</th>
-                    
+                    <th>Thao tác</th>
                 </tr>
                 </thead>
                 <tbody>
                     @if(isset($users))
                         @foreach($users as $user)
                         <tr>
-                            <td><input type="checkbox" value="" class="input-checkbox checkBoxItem"></td>
+                            <td><input type="checkbox" value="{{ $user->id }}" class="input-checkbox checkBoxItem"></td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td><input type="checkbox" class="js-switch" checked /></td>
+                            <td><input type="checkbox" class="js-switch status" value="{{ $user->publish }}" data-field="publish" data-model="User" {{ $user->publish == 1 ? 'checked' : '' }} data-modelId="{{ $user->id }}"></td>
+                            <td class="text-center">
+                                <a href="{{ route('user.edit', $user->id) }}" class="btn btn-success"> <i class="fa fa-edit"></i></a>
+                                <a href="{{ route('user.delete', $user->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                            </td>
                         </tr>
                     
                         @endforeach
